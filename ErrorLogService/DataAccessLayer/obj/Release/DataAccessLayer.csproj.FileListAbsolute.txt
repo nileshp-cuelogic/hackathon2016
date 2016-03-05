@@ -1,0 +1,6 @@
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Release\DataAccessLayer.dll
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Release\DataAccessLayer.pdb
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Release\Newtonsoft.Json.dll
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Release\Newtonsoft.Json.xml
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\obj\Release\DataAccessLayer.dll
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\obj\Release\DataAccessLayer.pdb

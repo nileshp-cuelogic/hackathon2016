@@ -1,0 +1,10 @@
+D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\ErrorLogService.dll.config
+D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\ErrorLogService.dll
+D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\ErrorLogService.pdb
+D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\DataAccessLayer.dll
+D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\Newtonsoft.Json.dll
+D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\DataAccessLayer.pdb
+D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\Newtonsoft.Json.xml
+D:\ErrorLogger\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.csprojResolveAssemblyReference.cache
+D:\ErrorLogger\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.dll
+D:\ErrorLogger\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.pdb

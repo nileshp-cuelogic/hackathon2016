@@ -1,0 +1,7 @@
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\bin\Debug\Newtonsoft.Json.xml
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\ErrorLogger\ErrorLogService\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLoggerWebApp", "ErrorLoggerWebApp\ErrorLoggerWebApp.csproj", "{14AE6F6E-8B49-4EA0-9B70-26F43276B474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLoggerWebApp.Tests", "ErrorLoggerWebApp.Tests\ErrorLoggerWebApp.Tests.csproj", "{F1223007-01EC-4AFB-85FA-CBD974E0895F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14AE6F6E-8B49-4EA0-9B70-26F43276B474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AE6F6E-8B49-4EA0-9B70-26F43276B474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AE6F6E-8B49-4EA0-9B70-26F43276B474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AE6F6E-8B49-4EA0-9B70-26F43276B474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1223007-01EC-4AFB-85FA-CBD974E0895F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1223007-01EC-4AFB-85FA-CBD974E0895F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1223007-01EC-4AFB-85FA-CBD974E0895F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1223007-01EC-4AFB-85FA-CBD974E0895F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
