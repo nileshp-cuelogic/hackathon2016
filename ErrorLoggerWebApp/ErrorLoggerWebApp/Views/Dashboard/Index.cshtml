@@ -1,0 +1,71 @@
+﻿@model ErrorLoggerWebApp.Models.Dashboard
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dashboard</h2>
+
+<div class="form-horizontal">
+    <div>
+        <label class="control-label col-md-2">Application</label>
+        @Html.DropDownListFor(t => t.ApplicationId, Model.ApplicationList, "Select Application", new { Id = "applicationList", @class = "form-control" })
+        <br />
+        <label class="control-label col-md-2">Module</label>
+        @Html.DropDownListFor(t => t.ModuleValue, Model.ModuleList, "Select Module", new { Id = "moduleList", @class = "form-control" })
+        <br /><br />
+        <input type="button" name="name" id="btnSubmit" value="submit" />
+    </div>
+    <div>
+        Chart
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#applicationList").change(function () {
+            var applicationId = $(this).val();
+
+            var select = $("#moduleList");
+            if (!applicationId) {
+                select.empty();
+                select.append($('<option/>', {
+                    value: '',
+                    text: "Select Module"
+                }));
+                return;
+            }
+            $.getJSON("Dashboard/LoadApplicationModules", { applicationId: applicationId },
+                   function (data) {
+                       select.empty();
+                       select.append($('<option/>', {
+                           value: '',
+                           text: "Select Module"
+                       }));
+                       $.each(data, function (index, itemData) {
+                           select.append($('<option/>', {
+                               value: itemData.Value,
+                               text: itemData.Text
+                           }));
+                       });
+                   });
+        });
+
+        $("#btnSubmit").click(function () {
+            var applicationId = $("#applicationList").val();
+            var moduleName = $("#moduleList").val();
+            if (!applicationId) {
+                applicationId = 0;
+            }
+            if (!moduleName)
+                moduleName = null;
+
+            $.getJSON("Dashboard/LoadErrorSummary", { applicationId: applicationId, moduleName: moduleName },
+                   function (data) {
+                       console.log(data);
+                   });
+        });
+    });
+</script>
+

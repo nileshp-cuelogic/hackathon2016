@@ -171,6 +171,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,6 +196,7 @@
     <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>ErrorLogger.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\ErrorLog.cs">
       <DependentUpon>ErrorLogger.tt</DependentUpon>
     </Compile>
@@ -295,6 +297,7 @@
     <Content Include="Views\Application\Details.cshtml" />
     <Content Include="Views\Application\Edit.cshtml" />
     <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
