@@ -21,16 +21,16 @@
         </div>
         <div class="col-md-2 col-sm-6 col-xs-12">
             <label class="control-label">From</label>
-            <input  type="text" id="dp1" class="datepicker form-control" placeholder="dd/mm/yy"
+            <input  type="text" id="dp1"  class="datepicker form-control" placeholder="mm/dd/yyyy"
                    name="date">
         </div>
         <div class="col-md-2 col-sm-6 col-xs-12">
             <label class="control-label">To</label>
-            <input form-control type="text" id="dp2" class="datepicker form-control" placeholder="dd/mm/yy"
+            <input form-control type="text" id="dp2"  class="datepicker form-control" placeholder="mm/dd/yyyy"
                    name="date">
         </div>
         <div class="col-md-2 col-sm-6 col-xs-12 submit-app-btn">
-            <input type="button" name="name" id="btnSubmit" value="submit" class="btn btn-primary btn-lg" />
+            <input type="button" name="name" id="btnSubmit"  value="submit" class="btn btn-primary btn-lg" />
         </div>
         </div>
     </div>
@@ -58,20 +58,22 @@
                             <h4 class="modal-title">Students who didn't enrolled in an AP course</h4>
                         </div>
                         <div class="modal-body">
-                            <div class="download-actions">
+                            @*<div class="download-actions">
                                 <label>Download report:</label>
                                 <a href="javascript:;" class="pdf-format"></a>
                                 <a href="javascript:;" class="csv-format"></a>
                                 <a href="javascript:;" class="xls-format"></a>
-                            </div>
-                            <table class="table table-hover no-more-tables">
+                            </div>*@
+                            <table class="table table-hover no-more-tables" id="tblErrors">
                                 <thead>
                                     <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Campus</th>
-                                        <th>Grade Level</th>
-                                        <th>Gender</th>
+                                        <th>Url</th>
+                                        <th>Module Name</th>
+                                        <th>File Name</th>
+                                        <th>Method Name</th>
+                                        <th>Exception</th>
+                                        <th>Stack Trace</th>
+                                        <th>Error Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,112 +83,9 @@
                                         <td>mdo</td>
                                         <td>...</td>
                                         <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>fat</td>
-                                        <td>...</td>
                                         <td>...</td>
                                     </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>fat</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>fat</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>fat</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>at</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>fat</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>fat</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>fat</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>

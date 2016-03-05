@@ -56,6 +56,23 @@ namespace ErrorLoggerWebApp.Controllers
         [AcceptVerbs(HttpVerbs.Get)]
         public JsonResult LoadModuleErrors(int applicationId, string moduleName, string fromDate, string toDate)
         {
+            DateTime dateTime1, dateTime2;
+            var IsValidFromDate = false;
+            var IsValidToDate = false;
+            if (DateTime.TryParse(fromDate, out dateTime1))
+            {
+                IsValidFromDate = true;
+            }
+            if (DateTime.TryParse(toDate, out dateTime2))
+            {
+                IsValidToDate = true;
+            }
+
+            if (!IsValidFromDate || !IsValidToDate)
+            {
+
+            }
+
             var UserId = db.AspNetUsers.FirstOrDefault(x => x.UserName == User.Identity.Name).Id;
 
             var IsSuperAdmin = HttpContext.User.IsInRole("Super Admin");
@@ -65,16 +82,34 @@ namespace ErrorLoggerWebApp.Controllers
                               where c.IsActive == true && (IsSuperAdmin || c.UserId == UserId)
                               && (applicationId == 0 || c.Id == applicationId)
                               && (String.IsNullOrEmpty(moduleName) || a.ModuleName == moduleName)
-                              select new { a.ModuleName, a.FileName, a.MethodName, a.ErrorMessage, a.StackTrace, a.Url, a.LogDate }).OrderByDescending(t => t.LogDate).Take(10);
+                              && (!IsValidFromDate || (a.LogDate >= dateTime1))
+                              && (!IsValidToDate || (a.LogDate <= dateTime2))
+                              select new { a.ModuleName, a.FileName, a.MethodName, a.ErrorMessage, a.StackTrace, a.Url, LogDate = a.LogDate }).OrderByDescending(t => t.LogDate).Take(10).ToList().Select(a => new { a.ModuleName, a.FileName, a.MethodName, a.ErrorMessage, a.StackTrace, a.Url, LogDate = a.LogDate.ToString("dd/MMM/yyy hh:mm tt") });
 
-            
+
 
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
-        public JsonResult LoadErrorSummary(int applicationId, string moduleName)
+        public JsonResult LoadErrorSummary(int applicationId, string moduleName, string fromDate, string toDate)
         {
+            DateTime dateTime1, dateTime2;
+            var IsValidFromDate = false;
+            var IsValidToDate = false;
+            if (DateTime.TryParse(fromDate, out dateTime1))
+            {
+                IsValidFromDate = true;
+            }
+            if (DateTime.TryParse(toDate, out dateTime2))
+            {
+                IsValidToDate = true;
+            }
+
+            if (!IsValidFromDate || !IsValidToDate) {
+
+            }
+
             var UserId = db.AspNetUsers.FirstOrDefault(x => x.UserName == User.Identity.Name).Id;
 
             var IsSuperAdmin = HttpContext.User.IsInRole("Super Admin");
@@ -85,6 +120,8 @@ namespace ErrorLoggerWebApp.Controllers
                               && (IsSuperAdmin || c.UserId == UserId)
                               && (applicationId == 0 || c.Id == applicationId)
                               && (String.IsNullOrEmpty(moduleName) || a.ModuleName == moduleName)
+                              && (!IsValidFromDate || (a.LogDate >= dateTime1))
+                              && (!IsValidToDate || (a.LogDate <= dateTime2))
                               select a.ModuleName).Count();
 
             var ApplicationErrors = from a in db.ErrorLogs
@@ -93,6 +130,8 @@ namespace ErrorLoggerWebApp.Controllers
                                     && (IsSuperAdmin || c.UserId == UserId)
                                     && (applicationId == 0 || c.Id == applicationId)
                                     && (String.IsNullOrEmpty(moduleName) || a.ModuleName == moduleName)
+                                    && (!IsValidFromDate || (a.LogDate >= dateTime1))
+                                    && (!IsValidToDate || (a.LogDate <= dateTime2))
                                     group c by new { c.Id, c.Name } into g
                                     select new { ApplicationId = g.Key.Id, ApplicatioName = g.Key.Name, ErrorCount = g.Count() };
 
@@ -101,6 +140,8 @@ namespace ErrorLoggerWebApp.Controllers
                                           where c.IsActive == true && (IsSuperAdmin || c.UserId == UserId)
                                           && (applicationId == 0 || c.Id == applicationId)
                                           && (String.IsNullOrEmpty(moduleName) || a.ModuleName == moduleName)
+                                          && (!IsValidFromDate || (a.LogDate >= dateTime1))
+                                          && (!IsValidToDate || (a.LogDate <= dateTime2))
                                           group c by new { c.Id, c.Name, a.ModuleName } into g
                                           select new { ApplicationId = g.Key.Id, ApplicatioName = g.Key.Name, ModuleName = g.Key.ModuleName, ErrorCount = g.Count() };
 

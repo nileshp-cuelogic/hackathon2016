@@ -43,10 +43,11 @@ $(document).ready(function () {
         }
         if (!moduleName)
             moduleName = null;
+        var datep1 = $("#dp1").val();
+        var datep2 = $("#dp2").val();
 
-        $.getJSON("Dashboard/LoadErrorSummary", { applicationId: applicationId, moduleName: moduleName },
+        $.getJSON("Dashboard/LoadErrorSummary", { applicationId: applicationId, moduleName: moduleName, fromDate: datep1, toDate: datep2 },
                function (data) {
-                   console.log(data);
                    ShowSummaryChart(data);
                });
     }
@@ -61,7 +62,8 @@ $(document).ready(function () {
         $('.total-Errors')[0].childNodes[1].innerHTML = 0;
         if (ResponseData)
         {
-            
+            var dp1 = $("#dp1").val();
+            var dp2 = $("#dp2").val();
             $('.total-Errors')[0].childNodes[1].innerHTML = ResponseData.ErrorCount;
 
             var AppErrors = ResponseData.ApplicationErrors;
@@ -90,9 +92,11 @@ $(document).ready(function () {
                             name: AppModErrors[item].ModuleName,
                             y: AppModErrors[item].ErrorCount,
                             id: AppModErrors[item].ApplicationId,
+                            dp1: dp1,
+                            dp2: dp2,
                             events: {
                                 click: function (e) {
-                                    highChart1Modal(e.point.id, e.point.name, '', '')
+                                    highChart1Modal(e.point.id, e.point.name, e.point.dp1, e.point.dp2);
                                 }
                             }
                         });
@@ -169,8 +173,8 @@ $(document).ready(function () {
 
                     drillUpButton: {
                         position: {
-                            y: -20,
-                            x: 10
+                            y: 10,
+                            x: -10
                         },
                         theme: {
                             fill: '#81c956',
@@ -208,19 +212,42 @@ $(document).ready(function () {
 
 });
 function highChart1Modal(applicationId, moduleName, fromDate, toDate) {
+    var trRow = "";
     $.getJSON("Dashboard/LoadModuleErrors", { applicationId: applicationId, moduleName: moduleName, fromDate: fromDate, toDate: toDate },
                function (data) {
-                   console.log(data);
+                   var table = $('.modal-body')[0].childNodes[1].childNodes[3];
+                   jQuery("#tblErrors tbody").empty();
                    $.each(data, function (index, itemData) {
-                       //select.append($('<option/>', {
-                       //    value: itemData.Value,
-                       //    text: itemData.Text
-                       //}));
+                       trRow += "<tr>" + "<td> <a  target=\"_blank\" href='" + itemData.Url + "'>" + itemData.Url + "</a></td>"
+                       + "<td>" + itemData.ModuleName + "</td>"
+                       + "<td>" + itemData.FileName + "</td>"
+                       + "<td>" + itemData.MethodName + "</td>"
+                       + "<td>" + itemData.ErrorMessage + "</td>"
+                       + "<td>" + itemData.StackTrace + "</td>"
+                       + "<td>" + itemData.LogDate + "</td></tr>";
+                       jQuery("#tblErrors tbody").append(trRow);
                    });
+                   
+                   
                });
+    
+    
     $('.highChart1Modal').modal('show');
 
 }
+$(function () {
+    //$('.datepicker').datepicker({
+    //    format: 'mm-dd-yyyy'
+    //});
+    var currentDate = new Date();
+    $('.datepicker').datepicker({
+        inline: true,
+        showOtherMonths: true,
+        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        dateFormat: 'mm/dd/yyyy'
+    });
+    $(".datepicker").datepicker("setDate", currentDate);
+});
 //function highChart1Modal() {
 //    $('.highChart1Modal').modal('show');
 //}
