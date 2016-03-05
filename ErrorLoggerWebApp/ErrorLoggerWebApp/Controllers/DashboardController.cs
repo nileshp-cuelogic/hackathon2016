@@ -54,6 +54,25 @@ namespace ErrorLoggerWebApp.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
+        public JsonResult LoadModuleErrors(int applicationId, string moduleName, string fromDate, string toDate)
+        {
+            var UserId = db.AspNetUsers.FirstOrDefault(x => x.UserName == User.Identity.Name).Id;
+
+            var IsSuperAdmin = HttpContext.User.IsInRole("Super Admin");
+
+            var ModuleList = (from a in db.ErrorLogs
+                              join c in db.Applications on a.ApplicationId equals c.Id
+                              where c.IsActive == true && (IsSuperAdmin || c.UserId == UserId)
+                              && (applicationId == 0 || c.Id == applicationId)
+                              && (String.IsNullOrEmpty(moduleName) || a.ModuleName == moduleName)
+                              select new { a.ModuleName, a.FileName, a.MethodName, a.ErrorMessage, a.StackTrace, a.Url, a.LogDate }).OrderByDescending(t => t.LogDate).Take(10);
+
+            
+
+            return Json(ModuleList, JsonRequestBehavior.AllowGet);
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
         public JsonResult LoadErrorSummary(int applicationId, string moduleName)
         {
             var UserId = db.AspNetUsers.FirstOrDefault(x => x.UserName == User.Identity.Name).Id;
