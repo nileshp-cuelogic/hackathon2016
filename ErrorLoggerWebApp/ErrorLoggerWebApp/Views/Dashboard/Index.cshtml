@@ -5,17 +5,36 @@
 }
 
 <h2>Dashboard</h2>
-
+<div class="row">
+    <div class="col-md-12 app-selection">
 <div class="form-horizontal">
     <div>
-        <label class="control-label col-md-2">Application</label>
-        @Html.DropDownListFor(t => t.ApplicationId, Model.ApplicationList, "Select Application", new { Id = "applicationList", @class = "form-control" })
-        <br />
-        <label class="control-label col-md-2">Module</label>
-        @Html.DropDownListFor(t => t.ModuleValue, Model.ModuleList, "Select Module", new { Id = "moduleList", @class = "form-control" })
-        <br /><br />
-        <input type="button" name="name" id="btnSubmit" value="submit" />
+        
+            
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <label class="control-label">Application</label>
+            @Html.DropDownListFor(t => t.ApplicationId, Model.ApplicationList, "Select Application", new { Id = "applicationList", @class = "form-control" })
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <label class="control-label">Module</label>
+            @Html.DropDownListFor(t => t.ModuleValue, Model.ModuleList, "Select Module", new { Id = "moduleList", @class = "form-control" })
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <label class="control-label">From</label>
+            <input  type="text" id="dp1" class="datepicker form-control" placeholder="dd/mm/yy"
+                   name="date">
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <label class="control-label">To</label>
+            <input form-control type="text" id="dp2" class="datepicker form-control" placeholder="dd/mm/yy"
+                   name="date">
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12 submit-app-btn">
+            <input type="button" name="name" id="btnSubmit" value="submit" class="btn btn-primary btn-lg" />
+        </div>
+        </div>
     </div>
+        </div>
     <div>
         <div class="grid simple">
             <div class="grid-title no-border">
@@ -25,9 +44,154 @@
                     <a href="javascript:;" class="list"></a>
                 </div>
             </div>
-            <div class="grid-body no-border">
+            <div class="grid-body no-border chart-container">
                 <div id="highChart1" style="height:350px;"> </div>
                 <h4 class="total-Errors">Total number of Errors <span class="semi-bold"></span></h4>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="modal fade bs-example-modal-lg highChart1Modal" id="" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Students who didn't enrolled in an AP course</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="download-actions">
+                                <label>Download report:</label>
+                                <a href="javascript:;" class="pdf-format"></a>
+                                <a href="javascript:;" class="csv-format"></a>
+                                <a href="javascript:;" class="xls-format"></a>
+                            </div>
+                            <table class="table table-hover no-more-tables">
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Campus</th>
+                                        <th>Grade Level</th>
+                                        <th>Gender</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>at</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

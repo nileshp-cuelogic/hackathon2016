@@ -8,6 +8,7 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     color: #2E3638;
+    background-color: #E3ECF3;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -34,6 +35,9 @@ textarea {
 .navbar-inverse {
     background-color: #9FCC8D;
     border-color: #9FCC8D;
+   -moz-box-shadow: 0px 2px 0px #ADADAD;
+    -webkit-box-shadow: 0px 2px 0px #ADADAD;
+    box-shadow: 0px 2px 0px #ADADAD;
 }
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
@@ -53,6 +57,7 @@ textarea {
 
 .container .jumbotron {
     margin-top: 10%;
+    background-color: #ffffff;
 }
 
 .jumbotron h1 {
@@ -91,6 +96,78 @@ footer {
     bottom: 0;
     width: 80%;
     text-align: center;
+}
+
+.hello-user a {
+    color: #8E3E58!important;
+}
+
+.app-selection {
+    background-color: #ffffff;
+    padding: 5px 0 103px 0;
+    border:solid 0px #e6e6e6;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    margin: 15px 0;
+    -moz-box-shadow: 1px 2px 5px #dedede;
+    -webkit-box-shadow: 1px 2px 5px #dedede;
+    box-shadow: 1px 2px 5px #D0CBCB;
+}
+
+.chart-container {
+    padding: 20px;
+    border:solid 0px #e6e6e6;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    margin: 15px 0;
+    -moz-box-shadow: 1px 2px 5px #dedede;
+    -webkit-box-shadow: 1px 2px 5px #dedede;
+    box-shadow: 1px 2px 5px #D0CBCB;
+    background-color: #ffffff;
+}
+
+.highcharts-button {
+    cursor: pointer;
+}
+
+.simple {
+    margin-top: 30px;
+}
+
+.app-selection label {
+    line-height: 30px;
+}
+
+.app-selection select, .app-selection input {
+    margin-top: 6px;
+}
+
+.submit-app-btn {
+    padding-top: 30px;
+}
+
+#btnSubmit {
+    width: 100%;
 }
 
 @media screen and (max-width: 540px) {
