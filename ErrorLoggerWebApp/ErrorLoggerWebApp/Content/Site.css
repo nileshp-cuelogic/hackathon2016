@@ -1,12 +1,20 @@
-﻿body {
+﻿html {
+    height: auto;
+    min-height: 100%;
+    position: relative;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color: #2E3638;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 50px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +29,78 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.navbar-inverse {
+    background-color: #9FCC8D;
+    border-color: #9FCC8D;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: #2E3638;
+    font-weight: 600;
+}
+
+.navbar > .container .navbar-brand {
+    font-size: 28px;
+    font-style: italic;
+    color:#8E3E58;
+}
+
+.navbar > .container .navbar-brand {
+    color: #8E3E58;
+}
+
+.container .jumbotron {
+    margin-top: 10%;
+}
+
+.jumbotron h1 {
+    color: #8E3E58;
+    font-style: italic;
+}
+
+.jumbotron p {
+    color: #2E3638;
+}
+
+.btn-primary {
+    background-color: #88B577;
+    border-color: #88B577;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    background-color: #739C63;
+    border-color: #739C63;
+}
+.login-container, .register-container {
+    width:40%;
+    margin: 0 auto;
+}
+
+.new-user {
+    margin-top: 10px;
+}
+
+.mrgn-top {
+    margin-top: 40px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    text-align: center;
+}
+
+@media screen and (max-width: 540px) {
+    .login-container, .register-container {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .login-container, .register-container {
+        margin-top: 10%;
+    }
 }
