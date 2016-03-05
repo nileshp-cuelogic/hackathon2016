@@ -63,16 +63,10 @@ $(document).ready(function() {
                     name: 'Gender',
                     y: 10457,
                     color: "#7cb5ec",
-                    events: {
-                        click: highChart1Modal
-                    }
                 }, {
                     name: 'Special Populations',
                     y: 10457,
                     color: "#2b908f",
-                     events: {
-                        click: highChart1Modal
-                    }
                 }],
 
             }],
@@ -85,8 +79,8 @@ $(document).ready(function() {
 
                 drillUpButton: {
                     position: {
-                        y: -20,
-                        x: 10
+                        y:10,
+                        x: -10
                     },
                     theme: {
                         fill: '#81c956',
@@ -135,6 +129,9 @@ $(document).ready(function() {
                         name: 'Special Populations',
                         y: 10457,
                         color: "#2b908f",
+                        events: {
+                            click: highChart1Modal
+                        }
                     }],
                 }]
 
@@ -274,9 +271,11 @@ $(document).ready(function() {
     });
 
       // Student Summery2
-    
-
-
+    $(function () {
+        $('.datepicker').datepicker({
+            format: 'dd-mm-yyyy'
+        });
+    });
 
     //++++++++++++++++++++++++++++++++++ Widgets ++++++++++++++++++++++++++++++++++
 
