@@ -34,8 +34,7 @@ $(document).ready(function () {
 
     $('.tip').tooltip();
     GetChartData();
-    function GetChartData()
-    {
+    function GetChartData() {
         var applicationId = $("#applicationList").val();
         var moduleName = $("#moduleList").val();
         if (!applicationId) {
@@ -52,42 +51,42 @@ $(document).ready(function () {
                });
     }
 
-    
+
     //++++++++++++++++++++++++++++++++++ Widgets ++++++++++++++++++++++++++++++++++
-    function ShowSummaryChart(ResponseData)
-    {
-        var chartData = [];
+    function ShowSummaryChart(ResponseData) {
+        var chartData = {}
         var drilldownData = [];
         var chartData1 = [];
         $('.total-Errors')[0].childNodes[1].innerHTML = 0;
-        if (ResponseData)
-        {
+        if (ResponseData) {
             var dp1 = $("#dp1").val();
             var dp2 = $("#dp2").val();
             $('.total-Errors')[0].childNodes[1].innerHTML = ResponseData.ErrorCount;
 
             var AppErrors = ResponseData.ApplicationErrors;
             var AppModErrors = ResponseData.ApplicationModuleErrors;
-            var color = ['#F7A35C', '#ed7d31', '#2b908f', '#90ED7D', '#5b97d5'];
-            for (var item in AppErrors)
-            {
-                chartData1.push({
-                    name: AppErrors[item].ApplicatioName,
-                    y: AppErrors[item].ErrorCount,
-                    drilldown: AppModErrors[item].ApplicationId
-                });
-                chartData.push({
-                    id: AppErrors[item].ApplicationId,
-                    data: chartData1,
-                    color: color[item]
+            var color = ['#F7A35C', '#2b908f', '#90ED7D', '#5b97d5', '#ed7d31'];
+            var ApplicationIds = $.unique(AppErrors.map(function (d) { return d.ApplicationId; }));
+            var dData = [];
+            for (var j = 0; j < AppErrors.length; j++) {
+                dData.push({
+                    name: AppErrors[j].ApplicatioName,
+                    y: AppErrors[j].ErrorCount,
+                    drilldown: AppModErrors[j].ApplicationId,
+                    color: color[j],
                 });
             }
+            chartData = [{
+                name: "Error Summary", 
+                data: dData
+            }];
+
             for (var i in AppErrors) {
                 var ApplicationId = AppErrors[i].ApplicationId
                 var drilldownData1 = [];
                 for (var item in AppModErrors) {
-                    
-                    if (ApplicationId = AppModErrors[item].ApplicationId) {
+
+                    if (ApplicationId == AppModErrors[item].ApplicationId) {
                         drilldownData1.push({
                             name: AppModErrors[item].ModuleName,
                             y: AppModErrors[item].ErrorCount,
@@ -101,7 +100,7 @@ $(document).ready(function () {
                             }
                         });
                     }
-                    
+
                 }
                 drilldownData.push({
                     id: ApplicationId,
@@ -110,8 +109,8 @@ $(document).ready(function () {
             }
         }
 
-        
-        
+
+
 
         $(function () {
 
@@ -202,7 +201,7 @@ $(document).ready(function () {
                         }
                     },
                     series: drilldownData
-                    
+
 
                 }
             });
@@ -227,26 +226,19 @@ function highChart1Modal(applicationId, moduleName, fromDate, toDate) {
                        + "<td>" + itemData.LogDate + "</td></tr>";
                        jQuery("#tblErrors tbody").append(trRow);
                    });
-                   
-                   
+
+
                });
-    
-    
+
+
     $('.highChart1Modal').modal('show');
 
 }
 $(function () {
-    //$('.datepicker').datepicker({
-    //    format: 'mm-dd-yyyy'
-    //});
-    var currentDate = new Date();
     $('.datepicker').datepicker({
-        inline: true,
-        showOtherMonths: true,
-        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
         dateFormat: 'mm/dd/yyyy'
     });
-    $(".datepicker").datepicker("setDate", currentDate);
+
 });
 //function highChart1Modal() {
 //    $('.highChart1Modal').modal('show');
