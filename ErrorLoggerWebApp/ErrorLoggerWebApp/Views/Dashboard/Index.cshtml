@@ -17,55 +17,22 @@
         <input type="button" name="name" id="btnSubmit" value="submit" />
     </div>
     <div>
-        Chart
+        <div class="grid simple">
+            <div class="grid-title no-border">
+                <h4 class="tip" data-toggle="tooltip" title="Error Summery">Error <span class="semi-bold">Summary</span></h4>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                    <a href="javascript:;" class="list"></a>
+                </div>
+            </div>
+            <div class="grid-body no-border">
+                <div id="highChart1" style="height:350px;"> </div>
+                <h4 class="total-Errors">Total number of Errors <span class="semi-bold"></span></h4>
+            </div>
+        </div>
     </div>
 </div>
 
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#applicationList").change(function () {
-            var applicationId = $(this).val();
-
-            var select = $("#moduleList");
-            if (!applicationId) {
-                select.empty();
-                select.append($('<option/>', {
-                    value: '',
-                    text: "Select Module"
-                }));
-                return;
-            }
-            $.getJSON("Dashboard/LoadApplicationModules", { applicationId: applicationId },
-                   function (data) {
-                       select.empty();
-                       select.append($('<option/>', {
-                           value: '',
-                           text: "Select Module"
-                       }));
-                       $.each(data, function (index, itemData) {
-                           select.append($('<option/>', {
-                               value: itemData.Value,
-                               text: itemData.Text
-                           }));
-                       });
-                   });
-        });
-
-        $("#btnSubmit").click(function () {
-            var applicationId = $("#applicationList").val();
-            var moduleName = $("#moduleList").val();
-            if (!applicationId) {
-                applicationId = 0;
-            }
-            if (!moduleName)
-                moduleName = null;
-
-            $.getJSON("Dashboard/LoadErrorSummary", { applicationId: applicationId, moduleName: moduleName },
-                   function (data) {
-                       console.log(data);
-                   });
-        });
-    });
-</script>
+@Scripts.Render("~/bundles/jquery")
+<script src="~/Scripts/Pages/Dashboard.js"></script>
 

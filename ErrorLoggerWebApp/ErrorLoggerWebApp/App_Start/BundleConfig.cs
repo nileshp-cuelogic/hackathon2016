@@ -11,6 +11,13 @@ namespace ErrorLoggerWebApp
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/highchart").Include(
+                        "~/Scripts/HighChart/highcharts.src.js",
+                        "~/Scripts/HighChart/highchart-drilldown.js",
+                        "~/Scripts/HighChart/charts.js"
+                        )
+                        );
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
