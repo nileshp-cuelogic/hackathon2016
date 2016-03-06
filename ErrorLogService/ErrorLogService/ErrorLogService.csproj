@@ -62,11 +62,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ErrorLogService.svc" />
+    <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorLogService.svc.cs">
       <DependentUpon>ErrorLogService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IErrorLogService.cs" />
     <Compile Include="Model\Error.cs" />

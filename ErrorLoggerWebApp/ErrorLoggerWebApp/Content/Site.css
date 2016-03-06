@@ -180,4 +180,7 @@ footer {
     .login-container, .register-container {
         margin-top: 10%;
     }
+    .modal-dialog{
+        width:80%;
+    }
 }

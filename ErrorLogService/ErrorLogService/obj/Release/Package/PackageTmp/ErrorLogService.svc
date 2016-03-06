@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="ErrorLogService.ErrorLogService" CodeBehind="ErrorLogService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ErrorLogService.ErrorLogService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" CodeBehind="ErrorLogService.svc.cs" %>

@@ -72,7 +72,7 @@ $(document).ready(function () {
                 dData.push({
                     name: AppErrors[j].ApplicatioName,
                     y: AppErrors[j].ErrorCount,
-                    drilldown: AppModErrors[j].ApplicationId,
+                    drilldown: AppErrors[j].ApplicationId,
                     color: color[j],
                 });
             }
@@ -208,15 +208,16 @@ $(document).ready(function () {
         });
     }
 
-
+    
 });
 function highChart1Modal(applicationId, moduleName, fromDate, toDate) {
-    var trRow = "";
+    
     $.getJSON("Dashboard/LoadModuleErrors", { applicationId: applicationId, moduleName: moduleName, fromDate: fromDate, toDate: toDate },
                function (data) {
                    var table = $('.modal-body')[0].childNodes[1].childNodes[3];
                    jQuery("#tblErrors tbody").empty();
                    $.each(data, function (index, itemData) {
+                       var trRow = "";
                        trRow += "<tr>" + "<td> <a  target=\"_blank\" href='" + itemData.Url + "'>" + itemData.Url + "</a></td>"
                        + "<td>" + itemData.ModuleName + "</td>"
                        + "<td>" + itemData.FileName + "</td>"
@@ -240,9 +241,6 @@ $(function () {
     });
 
 });
-//function highChart1Modal() {
-//    $('.highChart1Modal').modal('show');
-//}
-//function highChart2Modal() {
-//    $('.highChart2Modal').modal('show');
-//}
+
+
+

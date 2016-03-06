@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.ServiceModel.Activation;
 using System.Web;
 
 namespace LogErrorsService.Model
 {
     [DataContract]
+    [AspNetCompatibilityRequirements(RequirementsMode =
+            AspNetCompatibilityRequirementsMode.Allowed)]
     public class LogError
     {
         [DataMember]

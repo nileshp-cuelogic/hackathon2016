@@ -13,16 +13,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/05/2016 12:21:36</publishTime>
     </File>
     <File Include="bin/ErrorLogService.dll">
-      <publishTime>03/05/2016 13:06:01</publishTime>
+      <publishTime>03/06/2016 06:26:28</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>09/11/2015 13:15:50</publishTime>
     </File>
     <File Include="ErrorLogService.svc">
-      <publishTime>03/05/2016 12:08:20</publishTime>
+      <publishTime>03/06/2016 05:54:33</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/06/2016 05:44:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/05/2016 13:06:01</publishTime>
+      <publishTime>03/06/2016 06:26:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

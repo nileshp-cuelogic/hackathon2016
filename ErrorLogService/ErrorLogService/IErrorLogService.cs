@@ -1,5 +1,6 @@
 ﻿using LogErrorsService.Model;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 
 namespace ErrorLogService
@@ -9,9 +10,13 @@ namespace ErrorLogService
     public interface IErrorLogService
     {
         [OperationContract]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "*")]
+        void GetOptions();
+        [OperationContract]
+        [WebInvoke(Method = "*", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
         bool LogError(int ApplicationId, string ModuleName, string FileName, string MethodName, string ErrorMessage, string StackTrace = "", string Url = "");
         [OperationContract(Name = "LogErrorUsingObject")]
+        [WebInvoke(Method = "*", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
         bool LogError(LogError objLogError);
     }
 }

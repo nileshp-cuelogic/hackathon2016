@@ -6,6 +6,9 @@ namespace ErrorLogService
     // NOTE: In order to launch WCF Test Client for testing this service, please select ErrorLogService.svc or ErrorLogService.svc.cs at the Solution Explorer and start debugging.
     public class ErrorLogService : IErrorLogService
     {
+        public void GetOptions()
+        {
+        }
         public bool LogError(LogError objLogError)
         {
             Error objError = new Error()

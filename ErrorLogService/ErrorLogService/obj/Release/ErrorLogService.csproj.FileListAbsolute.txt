@@ -8,3 +8,13 @@ D:\ErrorLogger\ErrorLogService\ErrorLogService\bin\Newtonsoft.Json.xml
 D:\ErrorLogger\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.csprojResolveAssemblyReference.cache
 D:\ErrorLogger\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.dll
 D:\ErrorLogger\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.pdb
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\bin\ErrorLogService.dll.config
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\bin\ErrorLogService.dll
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\bin\ErrorLogService.pdb
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\bin\DataAccessLayer.dll
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\bin\Newtonsoft.Json.dll
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\bin\DataAccessLayer.pdb
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\bin\Newtonsoft.Json.xml
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.csprojResolveAssemblyReference.cache
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.dll
+D:\hackathon 2016\hackathon2016\ErrorLogService\ErrorLogService\obj\Release\ErrorLogService.pdb
